@@ -22,12 +22,12 @@ class Distance:
 
     def __mul__(self, other : "Distance") -> "Distance":
         if isinstance(other, Distance):
-            return None
+            raise TypeError("Unsupported multiplication between two Distance objects ")
         return Distance(self.km * other)
 
     def __truediv__(self, other : "Distance") -> "Distance":
         if isinstance(other, Distance):
-            return None
+            raise TypeError("Division between two Distance objects")
         return Distance(round(self.km / other, 2))
 
     def __lt__(self, other : "Distance") -> bool:
